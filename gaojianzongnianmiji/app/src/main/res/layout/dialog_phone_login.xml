@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/normal_780dp"
+    android:layout_height="@dimen/normal_850dp"
+    android:background="@drawable/shape_write_r10"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="会员登录"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/normal_71dp"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/normal_42dp" />
+
+    <EditText
+        android:id="@+id/phone_et"
+        android:layout_width="@dimen/normal_600dp"
+        android:layout_height="@dimen/normal_120dp"
+        android:layout_marginTop="@dimen/normal_100dp"
+        android:background="@drawable/shape_huise_r30"
+        android:hint="请输入手机号码"
+        android:maxLength="11"
+        android:inputType="phone"
+        android:paddingLeft="@dimen/normal_40dp"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/normal_36dp" />
+
+    <LinearLayout
+        android:layout_width="@dimen/normal_600dp"
+        android:layout_height="@dimen/normal_120dp"
+        android:layout_marginTop="@dimen/normal_30dp"
+        android:background="@drawable/shape_huise_r30"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/code_et"
+            android:layout_width="@dimen/normal_0dp"
+            android:layout_height="@dimen/normal_120dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入验证码"
+            android:paddingLeft="@dimen/normal_40dp"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/normal_36dp"
+            android:inputType="number"/>
+
+        <View
+            android:layout_width="@dimen/normal_1dp"
+            android:layout_height="@dimen/normal_60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/normal_10dp"
+            android:background="@color/color_999" />
+
+        <TextView
+            android:id="@+id/code_tv"
+            android:layout_width="@dimen/normal_130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/normal_30dp"
+            android:gravity="center"
+            android:text="验证码"
+            android:textColor="@color/color_CF2518"
+            android:textSize="@dimen/normal_36dp"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/save_tv"
+        android:layout_width="@dimen/normal_600dp"
+        android:layout_height="@dimen/normal_120dp"
+        android:layout_marginTop="@dimen/normal_30dp"
+        android:background="@drawable/public_button_shape"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_36dp"
+        android:textStyle="bold"
+        android:clickable="true"/>
+
+
+    <TextView
+        android:id="@+id/scan_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_60dp"
+        android:text="切换为扫码登录方式？"
+        android:textColor="@color/color_CF2518"
+        android:textSize="@dimen/normal_40dp"
+        android:clickable="true"/>
+
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/normal_800dp"
+    android:layout_height="@dimen/normal_700dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设备故障"
+        android:textSize="@dimen/normal_52sp"
+        android:textColor="@color/color_333"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tv_htich_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设备故障原因"
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/normal_48sp"
+        android:layout_marginTop="@dimen/normal_65dp"
+        android:layout_marginLeft="@dimen/normal_20dp"
+        android:layout_marginRight="@dimen/normal_20dp"/>
+    <TextView
+        android:id="@+id/tv_mag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请联系客服，电话："
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/normal_48sp"
+        android:layout_marginTop="@dimen/normal_50dp"
+        android:layout_marginLeft="@dimen/normal_20dp"
+        android:layout_marginRight="@dimen/normal_20dp"/>
+</LinearLayout>

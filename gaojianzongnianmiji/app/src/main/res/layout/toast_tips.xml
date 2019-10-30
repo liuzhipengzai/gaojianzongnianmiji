@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/normal_690dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_black_r40"
+        android:minHeight="@dimen/normal_300dp"
+        android:paddingLeft="@dimen/normal_90dp"
+        android:paddingTop="@dimen/normal_70dp"
+        android:paddingRight="@dimen/normal_90dp"
+        android:paddingBottom="@dimen/normal_70dp">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="@dimen/normal_120dp"
+            android:layout_height="@dimen/normal_120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/normal_20dp"
+            android:src="@mipmap/ic_success"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_img"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_50sp"
+            tools:text="支付成功" />
+
+        <TextView
+            android:id="@+id/tv_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/normal_30dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/normal_5dp"
+            tools:text="商品正从货道出货,请及时取走货物"
+            android:minLines="2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_36sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

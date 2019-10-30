@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/normal_50dp">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_out_weight"
+                    android:layout_width="@dimen/normal_480dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入出米重量(单位斤)"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bt_start_rice"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:text="开始碾米"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_out_weight"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_out_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_start_rice"
+                    app:layout_constraintLeft_toRightOf="@id/bt_start_rice"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="出米重量:10000克" />
+
+                <!--<android.support.v7.widget.AppCompatEditText-->
+                    <!--android:id="@+id/et_replenish_rice"-->
+                    <!--android:layout_width="@dimen/normal_480dp"-->
+                    <!--android:layout_height="@dimen/normal_90dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                    <!--android:background="@drawable/selector_edit_frame"-->
+                    <!--android:hint="请输入此次补货重量(单位公斤)"-->
+                    <!--android:inputType="number"-->
+                    <!--android:paddingLeft="@dimen/normal_30dp"-->
+                    <!--android:textColor="@color/color_333333"-->
+                    <!--android:textSize="@dimen/normal_30sp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/et_out_weight" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/bt_open_barn"-->
+                    <!--style="?android:attr/borderlessButtonStyle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="@dimen/normal_90dp"-->
+                    <!--android:layout_marginLeft="@dimen/normal_50dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                    <!--android:background="@drawable/selector_theme_blue_r44"-->
+                    <!--android:text="开启谷仓"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/normal_30sp"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/et_replenish_rice"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/bt_start_rice" />-->
+
+                <TextView
+                    android:id="@+id/tv_tip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:text="读碾米机关仓补偿质量重量等级:\n值为1-20(500克为单位，1即对应500克，2对应1000克，以此类推)"
+                    android:textColor="@color/color_333333"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_out_weight" />
+
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:gravity="center"
+                    android:text="请选择重量等级"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip1" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_weight"
+                    app:layout_constraintLeft_toRightOf="@id/tv1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip1" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/normal_30dp"
+                    android:layout_height="@dimen/normal_15dp"
+                    android:layout_marginRight="@dimen/normal_20dp"
+                    android:src="@drawable/selector_drop_down"
+                    app:layout_constraintBottom_toBottomOf="@id/sp_grade"
+                    app:layout_constraintRight_toRightOf="@id/sp_grade"
+                    app:layout_constraintTop_toTopOf="@id/sp_grade" />
+
+                <Button
+                    android:id="@+id/bt_read_w"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读补偿质量"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip1" />
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_w"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_w"
+                    tools:text="每500克补偿100克" />
+
+
+                <TextView
+                    android:id="@+id/tv_tip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:text="设置碾米机关仓补偿质量重量等级:\n值为1-20(500克为单位，1即对应500克，2对应1000克，以此类推)"
+                    android:textColor="@color/color_333333"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:gravity="center"
+                    android:text="请选择重量等级"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip2" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade1"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_weight"
+                    app:layout_constraintLeft_toRightOf="@id/tv1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip2" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/normal_30dp"
+                    android:layout_height="@dimen/normal_15dp"
+                    android:layout_marginRight="@dimen/normal_20dp"
+                    android:src="@drawable/selector_drop_down"
+                    app:layout_constraintBottom_toBottomOf="@id/sp_grade1"
+                    app:layout_constraintRight_toRightOf="@id/sp_grade1"
+                    app:layout_constraintTop_toTopOf="@id/sp_grade1" />
+
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_repair_weight"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入补偿质量(单位克)"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv2"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip2" />
+
+                <Button
+                    android:id="@+id/bt_set_w"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="设置补偿质量"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv2"
+                    app:layout_constraintLeft_toRightOf="@id/et_repair_weight"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip2" />
+
+
+                <Button
+                    android:id="@+id/bt_read_stop_dtime"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读碾米机电机延迟停转时间"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+
+                <TextView
+                    android:id="@+id/tv_close_dtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_stop_dtime"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_stop_dtime"
+                    tools:text="电机延迟停转时间 10秒" />
+
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_setdtime"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入电机停止时间(单位秒)"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_stop_dtime" />
+
+                <Button
+                    android:id="@+id/bt_setdtime"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置碾米机电机延迟停转时间"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_setdtime"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_stop_dtime" />
+
+
+                <Button
+                    android:id="@+id/bt_read_stop_mtime"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读碾米机米仓门关闭延迟时间"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_setdtime" />
+
+
+                <TextView
+                    android:id="@+id/tv_close_mtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_stop_mtime"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_stop_mtime"
+                    tools:text="碾米机米仓门关闭延迟时间 10秒" />
+
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_setmtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入米仓门关闭延迟时间(单位秒)"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_stop_mtime" />
+
+                <Button
+                    android:id="@+id/bt_setmtime"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置米仓门关闭延迟时间"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_setmtime"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_stop_mtime" />
+
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:gravity="center"
+                    android:text="请选择重量等级"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_setmtime" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade3"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_weight"
+                    app:layout_constraintLeft_toRightOf="@id/tv3"
+                    app:layout_constraintTop_toBottomOf="@id/et_setmtime" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/normal_30dp"
+                    android:layout_height="@dimen/normal_15dp"
+                    android:layout_marginRight="@dimen/normal_20dp"
+                    android:src="@drawable/selector_drop_down"
+                    app:layout_constraintBottom_toBottomOf="@id/sp_grade3"
+                    app:layout_constraintRight_toRightOf="@id/sp_grade3"
+                    app:layout_constraintTop_toTopOf="@id/sp_grade3" />
+
+
+                <Button
+                    android:id="@+id/bt_read_max_time"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读碾米机交易超时时间"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv3"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade3"
+                    app:layout_constraintTop_toBottomOf="@id/et_setmtime" />
+
+
+                <TextView
+                    android:id="@+id/tv_max_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_max_time"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_max_time"
+                    tools:text="碾米机交易超时时间每500克10秒" />
+
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:gravity="center"
+                    android:text="请选择重量等级"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade4"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_weight"
+                    app:layout_constraintLeft_toRightOf="@id/tv4"
+                    app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/normal_30dp"
+                    android:layout_height="@dimen/normal_15dp"
+                    android:layout_marginRight="@dimen/normal_20dp"
+                    android:src="@drawable/selector_drop_down"
+                    app:layout_constraintBottom_toBottomOf="@id/sp_grade4"
+                    app:layout_constraintRight_toRightOf="@id/sp_grade4"
+                    app:layout_constraintTop_toTopOf="@id/sp_grade4" />
+
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_max_time"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入交易时间"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv4"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade4"
+                    app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+                <Button
+                    android:id="@+id/bt_set_max_time"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="设置碾米机交易超时时间"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv4"
+                    app:layout_constraintLeft_toRightOf="@id/et_max_time"
+                    app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_dian_su"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入风扇启动设定温度"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_max_time" />
+
+                <Button
+                    android:id="@+id/bt_set_su"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置风扇启动设定温度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_dian_su"
+                    app:layout_constraintTop_toBottomOf="@id/et_max_time" />
+
+
+                <Button
+                    android:id="@+id/bt_read_su"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读取风扇启动温度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_dian_su" />
+
+
+                <TextView
+                    android:id="@+id/tv_su_dtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_su"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_su"
+                    tools:text="风扇启动温度" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_pack_temp_su"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入封袋加热片设定温度"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_su" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade5"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_25dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_temp"
+                    app:layout_constraintLeft_toRightOf="@id/et_pack_temp_su"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_su" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade7"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_25dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_temp_mode"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade5"
+                    app:layout_constraintTop_toBottomOf="@id/bt_read_su" />
+                <Button
+                    android:id="@+id/bt_set_pack_temp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_50dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置封袋加热片设定温度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade7"
+                    app:layout_constraintTop_toBottomOf="@id/tv_su_dtime" />
+
+
+                <Button
+                    android:id="@+id/bt_read_pack_temp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读取封袋加热片设定温度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_pack_temp_su" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade6"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_temp"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_pack_temp"
+                    app:layout_constraintTop_toBottomOf="@id/et_pack_temp_su" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_grade8"
+                    android:layout_width="@dimen/normal_150dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_20dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:entries="@array/rice_temp_mode"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade6"
+                    app:layout_constraintTop_toBottomOf="@id/et_pack_temp_su" />
+                <TextView
+                    android:id="@+id/tv_su_pack_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/sp_grade8"
+                    app:layout_constraintLeft_toRightOf="@id/sp_grade8"
+                    tools:text="封袋加热片设定温度" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_goods1_id"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入商品1的精度(1-100)"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sp_grade6" />
+
+                <Button
+                    android:id="@+id/bt_set_goods1_id"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置商品1的精度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_goods1_id"
+                    app:layout_constraintTop_toBottomOf="@id/sp_grade6" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_goods2_id"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入商品2的精度(1-100)"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_set_goods1_id" />
+
+                <Button
+                    android:id="@+id/bt_set_goods2_id"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置商品2的精度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_goods2_id"
+                    app:layout_constraintTop_toBottomOf="@id/bt_set_goods1_id" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_goods3_id"
+                    android:layout_width="@dimen/normal_500dp"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_edit_frame"
+                    android:hint="请输入商品3的精度(1-100)"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_set_goods2_id" />
+
+                <Button
+                    android:id="@+id/bt_set_goods3_id"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginLeft="@dimen/normal_50dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_30dp"
+                    android:paddingRight="@dimen/normal_30dp"
+                    android:text="设置商品3的精度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toRightOf="@id/et_goods3_id"
+                    app:layout_constraintTop_toBottomOf="@id/bt_set_goods2_id" />
+                <Button
+                    android:id="@+id/bt_read_goods1_id"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读取商品1的精度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_set_goods3_id" />
+
+
+                <TextView
+                    android:id="@+id/tv_goods1_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_goods1_id"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_goods1_id"
+                    tools:text="商品1的精度为" />
+                <Button
+                    android:id="@+id/bt_read_goods2_id"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读取商品2的精度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_goods1_id" />
+
+
+                <TextView
+                    android:id="@+id/tv_goods2_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_goods2_id"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_goods2_id"
+                    tools:text="商品2的精度为" />
+                <Button
+                    android:id="@+id/bt_read_goods3_id"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/normal_90dp"
+                    android:layout_marginTop="@dimen/normal_30dp"
+                    android:background="@drawable/selector_theme_blue_r44"
+                    android:paddingLeft="@dimen/normal_20dp"
+                    android:paddingRight="@dimen/normal_20dp"
+                    android:text="读取商品3的精度"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_goods2_id" />
+
+
+                <TextView
+                    android:id="@+id/tv_goods3_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/normal_30dp"
+                    android:layout_marginTop="@dimen/normal_20dp"
+                    android:textColor="#91c0e4"
+                    app:layout_constraintBaseline_toBaselineOf="@id/bt_read_goods3_id"
+                    app:layout_constraintLeft_toRightOf="@id/bt_read_goods3_id"
+                    tools:text="商品3的精度为"/>
+                <!--<Button-->
+                    <!--android:id="@+id/bt_read_pack_num"-->
+                    <!--style="?android:attr/borderlessButtonStyle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="@dimen/normal_90dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_30dp"-->
+                    <!--android:background="@drawable/selector_theme_blue_r44"-->
+                    <!--android:paddingLeft="@dimen/normal_20dp"-->
+                    <!--android:paddingRight="@dimen/normal_20dp"-->
+                    <!--android:text="读取商品3的精度"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/normal_30sp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/tv_goods3_id" />-->
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_pack_num"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="@dimen/normal_30dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                    <!--android:textColor="#91c0e4"-->
+                    <!--app:layout_constraintBaseline_toBaselineOf="@id/bt_read_pack_num"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/bt_read_pack_num"-->
+                    <!--tools:text="商品3的精度为"/>-->
+
+                <!--<android.support.v7.widget.AppCompatEditText-->
+                    <!--android:id="@+id/et_weight"-->
+                    <!--android:layout_width="@dimen/normal_500dp"-->
+                    <!--android:layout_height="@dimen/normal_90dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                    <!--android:background="@drawable/selector_edit_frame"-->
+                    <!--android:hint="请输入砝码重量"-->
+                    <!--android:inputType="number"-->
+                    <!--android:paddingLeft="@dimen/normal_30dp"-->
+                    <!--android:textColor="@color/color_333333"-->
+                    <!--android:textSize="@dimen/normal_30sp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/bt_read_su" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/bt_check_weight"-->
+                    <!--style="?android:attr/borderlessButtonStyle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="@dimen/normal_90dp"-->
+                    <!--android:layout_marginLeft="@dimen/normal_50dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                    <!--android:background="@drawable/selector_theme_blue_r44"-->
+                    <!--android:paddingLeft="@dimen/normal_30dp"-->
+                    <!--android:paddingRight="@dimen/normal_30dp"-->
+                    <!--android:text="准备校准"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/normal_30sp"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/et_weight"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/bt_read_su" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/bt_check_weight2"-->
+                    <!--style="?android:attr/borderlessButtonStyle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="@dimen/normal_90dp"-->
+                    <!--android:layout_marginLeft="@dimen/normal_50dp"-->
+                    <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                    <!--android:background="@drawable/selector_theme_blue_r44"-->
+                    <!--android:paddingLeft="@dimen/normal_30dp"-->
+                    <!--android:paddingRight="@dimen/normal_30dp"-->
+                    <!--android:text="开始校准"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/normal_30sp"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/bt_check_weight"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/bt_read_su" />-->
+
+                <!--<Button-->
+                <!--android:id="@+id/bt_accurate"-->
+                <!--style="?android:attr/borderlessButtonStyle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:paddingLeft="@dimen/normal_30dp"-->
+                <!--android:paddingRight="@dimen/normal_30dp"-->
+                <!--android:layout_height="@dimen/normal_90dp"-->
+                <!--android:layout_marginTop="@dimen/normal_20dp"-->
+                <!--android:background="@drawable/selector_theme_blue_r44"-->
+                <!--android:text="校准称重传感器"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/normal_30sp"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/et_replenish_rice" />-->
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+    </HorizontalScrollView>
+    <!--<TextView-->
+        <!--android:id="@+id/tv_fail_report"-->
+        <!--android:layout_width="@dimen/normal_250dp"-->
+        <!--android:layout_height="@dimen/normal_120dp"-->
+        <!--android:text="故障上报"-->
+        <!--android:textSize="@dimen/normal_35sp"-->
+        <!--android:padding="@dimen/normal_30dp"-->
+        <!--android:clickable="true"-->
+        <!--android:background="@drawable/shape_bg_yellow_r45"-->
+        <!--android:layout_marginTop="@dimen/normal_20dp"-->
+        <!--android:layout_marginLeft="@dimen/normal_42dp"-->
+        <!--android:gravity="center"/>-->
+
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.dlc.bannerplayer.PlayerBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_600dp"
+        app:banner_allow_scroll="false"
+        app:banner_delay_time="3000"
+        app:banner_error_delay_time="3000"
+        app:banner_force_show_duration="false" />
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_80dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/normal_60dp"
+        android:paddingRight="@dimen/normal_60dp"
+        >
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_xiaoxi"
+            />
+        
+        <ViewFlipper
+            android:id="@+id/ViewFlipper"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/normal_30dp"
+            android:layout_height="wrap_content"/>
+        
+        
+    </LinearLayout>
+  
+
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    
+
+</LinearLayout>

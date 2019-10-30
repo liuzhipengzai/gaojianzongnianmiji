@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_750dp"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/normal_25dp"
+        android:layout_marginLeft="@dimen/normal_25dp"
+        android:layout_marginTop="@dimen/normal_40dp"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/normal_35dp"
+        android:paddingTop="@dimen/normal_40dp">
+        <TextView
+            android:id="@+id/tv_hengfeng_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前横封温度：30"
+            android:textSize="@dimen/normal_52sp"/>
+        <TextView
+            android:id="@+id/tv_shufeng_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前竖封温度：30"
+            android:textSize="@dimen/normal_52sp"
+            android:layout_marginTop="@dimen/normal_32dp"/>
+        <TextView
+            android:id="@+id/tv_gucang_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前谷仓温度：30"
+            android:textSize="@dimen/normal_52sp"
+            android:layout_marginTop="@dimen/normal_32dp"/>
+        <TextView
+            android:id="@+id/tv_check_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前重量"
+            android:textSize="@dimen/normal_52sp"
+            android:layout_marginTop="@dimen/normal_32dp"/>
+        <TextView
+            android:id="@+id/tv_device_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前设备状态"
+            android:textSize="@dimen/normal_52sp"
+            android:layout_marginTop="@dimen/normal_32dp"/>
+        <TextView
+            android:id="@+id/tv_baojing_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前报警状态"
+            android:textSize="@dimen/normal_52sp"
+            android:layout_marginTop="@dimen/normal_32dp"/>
+    </LinearLayout>
+</RelativeLayout>

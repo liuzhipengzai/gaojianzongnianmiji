@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_448dp"
+        android:layout_marginBottom="@dimen/normal_30dp"
+        android:layout_marginLeft="@dimen/normal_40dp"
+        android:layout_marginRight="@dimen/normal_40dp"
+        android:layout_marginTop="@dimen/normal_30dp"
+        android:background="@drawable/shape_write_r10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="@dimen/normal_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/scan_img"
+                android:layout_width="@dimen/normal_185dp"
+                android:layout_height="@dimen/normal_185dp"
+                tools:src="@mipmap/ic_launcher"
+                />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/normal_34dp"
+                android:textColor="@color/color_666"
+                android:text="扫码关注公众号"
+                android:layout_marginTop="@dimen/normal_40dp"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ic_card_ll"
+            android:layout_width="@dimen/normal_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/normal_192dp"
+                android:layout_height="@dimen/normal_192dp"
+                android:src="@mipmap/ic_ick"
+                android:scaleType="fitXY"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/normal_34dp"
+                android:textColor="@color/color_666"
+                android:text="IC卡充值"
+                android:layout_marginTop="@dimen/normal_40dp"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/login_ll"
+            android:layout_width="@dimen/normal_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/normal_185dp"
+                android:layout_height="@dimen/normal_185dp"
+                android:src="@mipmap/ic_denglu"
+                android:scaleType="fitXY"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/normal_34dp"
+                android:textColor="@color/color_666"
+                android:text="维护登录"
+                android:layout_marginTop="@dimen/normal_40dp"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

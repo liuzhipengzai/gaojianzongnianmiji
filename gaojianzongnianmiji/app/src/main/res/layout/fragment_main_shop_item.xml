@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingLeft="@dimen/normal_40dp"
+    android:paddingRight="@dimen/normal_40dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_400dp"
+        android:background="@drawable/shape_write_r10"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/normal_20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/normal_50dp"
+        android:paddingRight="@dimen/normal_50dp">
+
+
+        <ImageView
+            android:id="@+id/head_img"
+            android:layout_width="@dimen/normal_310dp"
+            android:layout_height="@dimen/normal_320dp"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/normal_38dp"
+                tools:text="精胚米" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_50dp">
+
+                <TextView
+                    android:id="@+id/price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_CF2518"
+                    android:textSize="@dimen/normal_42dp"
+                    android:textStyle="bold"
+                    tools:text="4.00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_CF2518"
+                    android:textSize="@dimen/normal_34dp"
+                    tools:text="元/斤" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_40dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/jian_img"
+                    android:layout_width="@dimen/normal_85dp"
+                    android:layout_height="@dimen/normal_85dp"
+                    android:src="@mipmap/jian"
+                    android:scaleType="fitXY"/>
+
+
+                <TextView
+                    android:id="@+id/number_tv"
+                    android:layout_width="@dimen/normal_160dp"
+                    android:layout_height="@dimen/normal_60dp"
+                    android:layout_marginLeft="@dimen/normal_15dp"
+                    android:layout_marginRight="@dimen/normal_10dp"
+                    android:background="@drawable/shape_e_line_r30"
+                    android:gravity="center"
+                    android:text="1斤"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/normal_38dp" />
+
+                <ImageView
+                    android:id="@+id/add_img"
+                    android:layout_width="@dimen/normal_85dp"
+                    android:layout_height="@dimen/normal_85dp"
+                    android:src="@mipmap/jia"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="@dimen/normal_13dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_448dp"
+        android:layout_marginBottom="@dimen/normal_30dp"
+        android:layout_marginLeft="@dimen/normal_40dp"
+        android:layout_marginRight="@dimen/normal_40dp"
+        android:layout_marginTop="@dimen/normal_30dp"
+        android:background="@drawable/shape_write_r10"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_60dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/normal_30dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/normal_10dp"
+                android:layout_height="@dimen/normal_34dp" 
+                android:background="@color/color_CF2518"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择支付方式"
+                android:textColor="@color/color_333"
+                android:layout_marginLeft="@dimen/normal_5dp"
+                android:textSize="@dimen/normal_36dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/pay_ll"
+                android:layout_width="@dimen/normal_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/pay_img"
+                    android:layout_width="@dimen/normal_192dp"
+                    android:layout_height="@dimen/normal_192dp"
+                    android:src="@mipmap/ic_ewmzf"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_40dp"
+                    android:text="微信/支付宝"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/normal_34dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/huiyan_ll"
+                android:layout_width="@dimen/normal_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/normal_192dp"
+                    android:layout_height="@dimen/normal_192dp"
+                    android:src="@mipmap/ic_huiyuan"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_40dp"
+                    android:text="会员支付"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/normal_34dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/card_ll"
+                android:layout_width="@dimen/normal_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/normal_192dp"
+                    android:layout_height="@dimen/normal_192dp"
+                    android:src="@mipmap/ic_ick"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_40dp"
+                    android:text="IC卡支付"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/normal_34dp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

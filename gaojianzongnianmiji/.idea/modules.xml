@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gaojianzongnianmiji.iml" filepath="$PROJECT_DIR$/gaojianzongnianmiji.iml" />
+      <module fileurl="file://G:\git\gaojianzongnianmiji\app\gaojianzongnianmiji-app.iml" filepath="G:\git\gaojianzongnianmiji\app\gaojianzongnianmiji-app.iml" />
+      <module fileurl="file://G:\git\gaojianzongnianmiji\liuzhipeng-gaojianzongnianmiji.iml" filepath="G:\git\gaojianzongnianmiji\liuzhipeng-gaojianzongnianmiji.iml" />
+    </modules>
+  </component>
+</project>

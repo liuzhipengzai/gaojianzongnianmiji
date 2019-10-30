@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="@dimen/normal_60dp"
+    android:paddingRight="@dimen/normal_60dp"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginBottom="@dimen/normal_50dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/normal_39dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="@dimen/normal_10dp"
+            android:layout_height="@dimen/normal_34dp"
+            android:background="@color/color_CF2518" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_5dp"
+            android:text="会员充值"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/normal_36dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_74dp"
+        >
+
+        <TextView
+            android:id="@+id/title_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/normal_40dp"
+            android:textColor="@color/color_666"
+            android:text="IC卡号："
+            />
+
+        <TextView
+            android:id="@+id/number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/normal_40dp"
+            android:textColor="@color/color_333"
+            tools:text="45645645"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_24dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/normal_40dp"
+            android:textColor="@color/color_666"
+            android:text="余额："
+            />
+
+        <TextView
+            android:id="@+id/money_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/normal_40dp"
+            android:textColor="@color/color_333"
+            tools:text="10.00"
+            />
+
+
+    </LinearLayout>
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_80dp"
+        />
+
+
+    <TextView
+        android:id="@+id/save_tv"
+        android:layout_width="@dimen/normal_900dp"
+        android:layout_height="@dimen/normal_120dp"
+        android:layout_marginTop="@dimen/normal_100dp"
+        android:background="@drawable/public_button_shape"
+        android:gravity="center"
+        android:text="立刻充值"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_36dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

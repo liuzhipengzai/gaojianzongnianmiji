@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@mipmap/ic_drop_down"
+    android:tint="#1d1d1d"
+    android:tintMode="multiply">
+</bitmap>

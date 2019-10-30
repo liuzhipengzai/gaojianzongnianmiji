@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/normal_780dp"
+    android:layout_height="@dimen/normal_840dp"
+    android:background="@drawable/shape_write_r10"
+    >
+    
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:src="@mipmap/ic_close"
+        android:layout_gravity="right"
+        android:padding="@dimen/normal_50dp"
+        />
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/code_tv"
+            android:layout_width="@dimen/normal_420dp"
+            android:layout_height="@dimen/normal_420dp"
+            android:padding="@dimen/normal_40dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/normal_40dp"
+            android:textColor="@color/color_666"
+            android:text="扫码登录"
+            />
+    </LinearLayout>
+
+</FrameLayout>

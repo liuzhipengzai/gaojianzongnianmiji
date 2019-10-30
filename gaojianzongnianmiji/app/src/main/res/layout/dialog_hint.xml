@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/normal_780dp"
+    android:layout_height="@dimen/normal_760dp"
+    android:background="@drawable/shape_write_r10"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_71dp"
+        android:layout_marginTop="@dimen/normal_71dp"
+        android:text="提示"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/normal_42dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_71dp"
+        android:gravity="center"
+        android:text="抱歉，您卡内余额不足\n请充值后再刷卡支付"
+        android:textColor="@color/color_666"
+        android:textSize="@dimen/normal_42dp" />
+
+    <TextView
+        android:id="@+id/save_tv"
+        android:layout_width="@dimen/normal_600dp"
+        android:layout_height="@dimen/normal_120dp"
+        android:background="@drawable/public_button_shape"
+        android:gravity="center"
+        android:text="立刻充值"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_36dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cancel_tv"
+        android:layout_width="@dimen/normal_600dp"
+        android:layout_height="@dimen/normal_120dp"
+        android:layout_marginTop="@dimen/normal_40dp"
+        android:background="@drawable/shape_bt_huise"
+        android:gravity="center"
+        android:text="结束"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/color_666"
+        android:textSize="@dimen/normal_36dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
